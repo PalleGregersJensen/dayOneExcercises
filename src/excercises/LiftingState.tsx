@@ -10,8 +10,9 @@ export default function LiftingState({ title }: BaseProps) {
     const [users, setUsers] = useState(usersDB);
     const [userToEdit, setUserToEdit] = useState<User | undefined>(undefined);
 
-    const addEditDeleteUser: AddEditDeleteFunction = (user, isDelete) => {
-        console.log("add user?");
+
+//    const addEditDeleteUser: AddEditDeleteFunction = (user, isDelete) => {
+//        console.log("add user?");
         /*
      1) Implement this method, that should add, edit or delete given these conditions
         This is the method we are going to pass to the UserFormControlled component
@@ -19,14 +20,38 @@ export default function LiftingState({ title }: BaseProps) {
         b) user has an id   -> Edit the user
         c) user does not have an id → Create the user
     */
+//    };
+
+    const addEditDeleteUser: AddEditDeleteFunction = (user, isDelete) => {
+        if (isDelete) {
+            // Delete the user
+            setUsers(users.filter((u) => u.id !== user.id));
+        } else if (user.id) {
+            // Edit the user
+            setUsers(users.map((u) => (u.id === user.id ? user : u)));
+        } else {
+            // Create the user
+            const newUser: User = { ...user, id: getNextId() };
+            setUsers([...users, newUser]);
+        }
     };
 
-    const editUser = (id: number) => {
+    
+//    const editUser = (id: number) => {
         /*
      Find the user (in users) given the id and set userToEdit to this user
      Remember users is just an array of users, so you have to find the user in the array
     */
+    //    };
+
+    const editUser = (id: number) => {
+        const userToEdit = users.find((u) => u.id === id);
+        if (userToEdit) {
+            setUserToEdit(userToEdit);
+        }
     };
+
+    //const titleComponent = title && <h2>{title}</h2>;
     <h2>{title}</h2>;
     return (
         <>
