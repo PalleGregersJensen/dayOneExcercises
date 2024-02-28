@@ -3,13 +3,15 @@ import { User, users as usersDB, getNextId } from "../data/data";
 import { useState } from "react";
 import UserTableWithButtons from "../components/UserTableWithButtons";
 import "../liftingState.css";
-// import UserFormControlled, { AddEditDeleteFunction } from "../components/UserFormControlled";
+//import UserFormControlled, { AddEditDeleteFunction } from "../components/UserFormControlled";
+import UserFormControlled, { AddEditDeleteFunction } from "../components/UserFormControlled";
 
 export default function LiftingState({ title }: BaseProps) {
     const [users, setUsers] = useState(usersDB);
     const [userToEdit, setUserToEdit] = useState<User | undefined>(undefined);
 
     const addEditDeleteUser: AddEditDeleteFunction = (user, isDelete) => {
+        console.log("add user?");
         /*
      1) Implement this method, that should add, edit or delete given these conditions
         This is the method we are going to pass to the UserFormControlled component

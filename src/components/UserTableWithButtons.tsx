@@ -9,6 +9,7 @@ export default function UserTableWithButtons({ users, editUser }: UserTableProps
     // 1) Implement an eventhandler that will handle the edit button click and call the editUser callback
     const handleEditUser = (userId: number) => {
         editUser(userId);
+        console.log("Edit user with id: ", userId);
     };
 
     useEffect(() => {
@@ -37,7 +38,10 @@ export default function UserTableWithButtons({ users, editUser }: UserTableProps
                             </td>
                             <td>{user.isActive ? "Yes" : "No"}</td>
                             <td>
-                                <button onClick={() => handleEditUser(user.id || -1)}>Edit</button>
+                                <button onClick={() => handleEditUser(user.id || -1)}>
+                                    {" "}
+                                    Edit
+                                </button>
                             </td>
                         </tr>
                     ))}

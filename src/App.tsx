@@ -39,7 +39,7 @@ export default function App() {
                         {selectedView == "stateDemo3" ? <StateDemo3 title="State Demo 3" /> : null}
                         {selectedView == "useEffect" ? <UseEffectDemo title="useEffect" /> : null}
                         {selectedView == "fetchDemo" ? <FetchDemo1 title="fetchDemo" /> : null}
-                        {selectedView == "liftingState" ? <LiftingState title="LiftingStateDemo" /> : null}
+                        {selectedView == "liftingState" ? <LiftingState title="liftingState" /> : null}
                         {/**Add the exercise components you create for each exercise using the key you used for the matching button  */}
                     </div>
                 </div>
@@ -85,7 +85,7 @@ const Buttons = (props: ButtonProps) => {
             <button className="btn-w100" onClick={() => handleSelected("fetchDemo")}>
                 Fetch demo
             </button>
-            <button className="btn-w100" onClick={() => handleSelected("liftingStateDemo")}>
+            <button className="btn-w100" onClick={() => handleSelected("liftingState")}>
                 Lifting state
             </button>
         </>
