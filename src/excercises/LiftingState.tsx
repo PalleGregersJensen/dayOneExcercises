@@ -3,7 +3,6 @@ import { User, users as usersDB, getNextId } from "../data/data";
 import { useState } from "react";
 import UserTableWithButtons from "../components/UserTableWithButtons";
 import "../liftingState.css";
-//import UserFormControlled, { AddEditDeleteFunction } from "../components/UserFormControlled";
 import UserFormControlled, { AddEditDeleteFunction } from "../components/UserFormControlled";
 
 export default function LiftingState({ title }: BaseProps) {
