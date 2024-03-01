@@ -74,7 +74,7 @@ button:hover {
   background: none;
 }
 
-/* Add style rule to make images smaller than before */
+/* Add a style rule to make images smaller than before */
  .imageButton img {
   max-width: 10%; /* Begræns billedets bredde til bredden af dens container */
   max-height: 10%; /*Begræns billedets højde til højden af dens container */
