@@ -75,10 +75,10 @@ button:hover {
 }
 
 /* Add style rule to make images smaller */
-.imageButton img {
+ .imageButton img {
   max-width: 10%; /* Begræns billedets bredde til bredden af dens container */
-  max-height: 10%; /* Begræns billedets højde til højden af dens container */
-}
+  max-height: 10%; /*Begræns billedets højde til højden af dens container */
+ } 
 
 
 

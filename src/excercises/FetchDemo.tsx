@@ -16,7 +16,6 @@ export default function FetchDemo1({ title }: BaseProps) {
     const [user, setUser] = useState<User | null>(null);
     const [loading, setLoading] = useState(true);
 
-
     //Use this to fetch the next user when the "Next User" button is clicked
     //Make sure you understand why we don't need useEffect here
     const fetchNextUser = async () => {
@@ -37,6 +36,7 @@ export default function FetchDemo1({ title }: BaseProps) {
     useEffect(() => {
         fetchUser(userId).then((response) => {
             setUser(response);
+            setLoading(false);
             console.log(response);
         });
     }, [userId]);
@@ -44,10 +44,15 @@ export default function FetchDemo1({ title }: BaseProps) {
     return (
         <>
             <h2>{title}</h2>
-            {loading && <p>Loading...</p>}
-            {user && JSON.stringify(user)}
-            <br />
-            <button onClick={fetchNextUser}>Next User</button>
+            {loading ? (
+                <p>Loading...</p>
+            ) : (
+                <>
+                    {user && JSON.stringify(user)}
+                    <br />
+                    <button onClick={fetchNextUser}>Next User</button>
+                </>
+            )}
         </>
     );
 }
